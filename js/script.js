@@ -1,4 +1,4 @@
-var NAME_REGEX = /ё+/;
+var NAME_REGEX = /ё+/i;
 var inputName = document.querySelector('.input-name');
 var inputNumber = document.querySelector('.input-number');
 var inputFile = document.querySelector('.input-file');
