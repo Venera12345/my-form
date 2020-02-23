@@ -1,42 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <title>form</title>
 </head>
+
 <body>
-    <section class="wrapper-form">
+    <section class="wrapper wrapper-form">
         <form class="form">
-            <h2 class="title-form">Тестовое задание</h2>
+            <h2 class="title title-form">Тестовое задание</h2>
             <div class="wrapper-block-input">
-            <div class="wrapper-input input-text">
-            <input type="text" class="input" placeholder="Плеисхолдер - числовое поле ввода">
-            <span class='error'>Обязательное поле - введите любую строку, в которой есть буква “Ё”</span>
+                <div class="wrapper-input wrapper-input-text">
+                    <input type="text" class="input input-name" placeholder="Плеисхолдер - числовое поле ввода"
+                        required>
+                    <span class='error'>Обязательное поле - введите любую строку, в которой есть буква “Ё”</span>
+                </div>
+                <div class="wrapper-input wrapper-input-number">
+                    <input type="number" min="1" max="8" class="input input-number" required
+                        placeholder="Плеисхолдер - числовое поле ввода">
+                    <span class='error'>Некорректное значение, требуется ввести число от 1 до 8</span>
+                </div>
+                <div class="wrapper-input wrapper-input-file">
+                    <label class="label-file">
+                        <span>Плеисхолдер - загрузка файла</span>
+                        <input type="file" class="input input-file" placeholder="Плеисхолдер - загрузка файла" required>
+                    </label>
+                    <span class='error'>Неккоректный тип файла, поддерживается только .jpg</span>
+                </div>
             </div>
-            <div class="wrapper-input input-number">
-            <input type="number" class="input" placeholder="Плеисхолдер - числовое поле ввода">
-            <span class='error'>Некорректное значение, требуется ввести число от 1 до 8</span>
-           </div>
-           <div class="wrapper-input wrapper-input-file">
-            <label class="label-file">
-            <input type="file" class="input input-file" placeholder="Плеисхолдер - загрузка файла">
-        </label>
-        <span class='error'>Неккоректный тип файла, поддерживается только .jpg</span>
-        </div>
-    </div>
             <div class="wrapper-input wrapper-input-checkbox">
-            <input type="checkbox" class="input-checkbox" name="subscribe" checked>
-            <label for="subscribe" class="text-subscribe">Кастомный чекбокс, на эту подпись тоже можно нажать</label>
-        </div>
-        <button type="button" class="btn">
-            <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect y="99.7021" width="141" height="141" rx="8" transform="rotate(-45 0 99.7021)" fill="#FFC700"/>
-                <path d="M160.536 103.536C162.488 101.583 162.488 98.4171 160.536 96.4645L128.716 64.6447C126.763 62.6921 123.597 62.6921 121.645 64.6447C119.692 66.5973 119.692 69.7631 121.645 71.7158L149.929 100L121.645 128.284C119.692 130.237 119.692 133.403 121.645 135.355C123.597 137.308 126.763 137.308 128.716 135.355L160.536 103.536ZM44 105H157V95H44V105Z" fill="black"/>
+                <input type="checkbox" class="input-checkbox" id="subscribe" checked>
+                <label for="subscribe" class="text-subscribe">Кастомный чекбокс, на эту подпись тоже можно
+                    нажать</label>
+            </div>
+            <button type="button" class="btn btn-submit" disabled>
+                <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect y="99.7021" width="141" height="141" rx="8" transform="rotate(-45 0 99.7021)"
+                        fill="#FFC700" />
+                    <path
+                        d="M160.536 103.536C162.488 101.583 162.488 98.4171 160.536 96.4645L128.716 64.6447C126.763 62.6921 123.597 62.6921 121.645 64.6447C119.692 66.5973 119.692 69.7631 121.645 71.7158L149.929 100L121.645 128.284C119.692 130.237 119.692 133.403 121.645 135.355C123.597 137.308 126.763 137.308 128.716 135.355L160.536 103.536ZM44 105H157V95H44V105Z"
+                        fill="black" />
                 </svg>
-        </button>
+            </button>
         </form>
     </section>
+    <section class="wrapper-success wrapper">
+        <h2 class="title title-success">Эта страница = отдельная компонента в приложении</h2>
+        <ul class="list-attempts"></ul>
+        <div class="rect-number-attempt">
+            <p class="text-attempt">Число успешных попыток потверждения формы</p>
+            <p class="number-attempt">0</p>
+        </div>
+        <button type="button" class="btn btn-back">
+            <svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" fill="none">
+                <rect y="99.7021" width="141" height="141" rx="8" transform="rotate(-45 0 99.7021)" fill="#fff" />
+                <path
+                    d="M40.4645 96.4645C38.5118 98.4171 38.5118 101.583 40.4645 103.536L72.2843 135.355C74.2369 137.308 77.4027 137.308 79.3553 135.355C81.308 133.403 81.308 130.237 79.3553 128.284L51.0711 100L79.3553 71.7158C81.308 69.7631 81.308 66.5973 79.3553 64.6447C77.4027 62.6921 74.2369 62.6921 72.2843 64.6447L40.4645 96.4645ZM157 95L44 95L44 105L157 105L157 95Z"
+                    fill="black" />
+            </svg>
+        </button>
+    </section>
+    <script src="js/script.js">
+
+    </script>
 </body>
+
 </html>
